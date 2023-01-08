@@ -1,8 +1,19 @@
 var altura = 0
 var largura = 0
 var vidas = 1
-var tempo = 5
+var tempo = 15
 
+var dificuldade = window.location.search
+dificuldade = dificuldade.replace('?','')
+var criaMosquitoTempo=2000
+
+if(dificuldade==='normal'){
+	criaMosquitoTempo = 2000
+}else if(dificuldade === 'dificil'){
+	criaMosquitoTempo = 1500
+}else if(dificuldade === 'queroSofrer'){
+	criaMosquitoTempo = 1000
+}
 function ajustaTelaDeFundo(){
 	altura = window.innerHeight
 	largura = window.innerWidth
@@ -10,6 +21,7 @@ function ajustaTelaDeFundo(){
 }
 ajustaTelaDeFundo()
 
+//intervalo
 var cronometro = setInterval(function() {
 	tempo -= 1
 
