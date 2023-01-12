@@ -1,11 +1,11 @@
-var altura = 0
-var largura = 0
-var vidas = 1
-var tempo = 15
+const altura = 0
+const largura = 0
+const vidas = 1
+const tempo = 15
 
-var dificuldade = window.location.search
-dificuldade = dificuldade.replace('?','')
-var criaMosquitoTempo=2000
+let dificuldade = window.location.search
+let = dificuldade.replace('?','')
+let criaMosquitoTempo=2000
 
 if(dificuldade==='normal'){
 	criaMosquitoTempo = 2000
@@ -22,7 +22,7 @@ function ajustaTelaDeFundo(){
 ajustaTelaDeFundo()
 
 //intervalo
-var cronometro = setInterval(function() {
+let cronometro = setInterval(function() {
 	tempo -= 1
 
 	if(tempo <= 0 ){
@@ -37,8 +37,8 @@ var cronometro = setInterval(function() {
 ,1000)
 
 function positionMosquito() {
-	var positionY = (Math.random() * altura) -90
-	var positionX = (Math.random() * largura) -90
+	const positionY = (Math.random() * altura) -90
+	const positionX = (Math.random() * largura) -90
 
 	//Remover mosquito
 	if (document.getElementById('mosquito')){
@@ -57,7 +57,7 @@ function positionMosquito() {
 	positionY = positionY < 90 ? 0 : positionY
 	//	console.log(positionY, positionX)
 	//Criação elemento HTML IMG
-	var mosquito = document.createElement('img')
+	let mosquito = document.createElement('img')
 	mosquito.src = 'imagens/mosquito.png'
 	mosquito.className = alteraTamanho() + ' ' + alteraLado()
 	mosquito.style.left = positionX + 'px'
@@ -74,7 +74,7 @@ function positionMosquito() {
 }
 
 function alteraTamanho(){
-	var classe = Math.floor(Math.random() * 3) 
+	let classe = Math.floor(Math.random() * 3) 
 	
 	switch(classe) {
 		case 0:
@@ -88,7 +88,7 @@ function alteraTamanho(){
 }
 
 function alteraLado() {
-	var classe = Math.floor(Math.random() * 2) 
+	let classe = Math.floor(Math.random() * 2) 
 	
 	switch(classe) {
 		case 0:
