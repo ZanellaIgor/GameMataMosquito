@@ -1,11 +1,11 @@
-const altura = 0
-const largura = 0
-const vidas = 1
-const tempo = 15
+let altura = 0
+let largura = 0
+let vidas = 1
+let tempo = 15
 
 let dificuldade = window.location.search
 let = dificuldade.replace('?','')
-let criaMosquitoTempo=2000
+let criaMosquitoTempo= 2000
 
 if(dificuldade==='normal'){
 	criaMosquitoTempo = 2000
@@ -37,8 +37,8 @@ let cronometro = setInterval(function() {
 ,1000)
 
 function positionMosquito() {
-	const positionY = (Math.random() * altura) -90
-	const positionX = (Math.random() * largura) -90
+	let positionY = (Math.random() * altura) -90
+	let positionX = (Math.random() * largura) -90
 
 	//Remover mosquito
 	if (document.getElementById('mosquito')){
@@ -81,7 +81,7 @@ function alteraTamanho(){
 			return 'mosquito1'
 		case 1:
 			return 'mosquito2'
-		case 3:
+		case 2:
 			return 'mosquito3'
 	}
 
